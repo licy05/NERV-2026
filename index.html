@@ -10,14 +10,7 @@
 <body>
 <div id="container-wrap">
 	<div id="header">
-		<div id="search-top-box">
-			<form id="search-top-box-form" method="get" action="/search:page">
-				<input type="text" name="q" id="search-top-box-input" class="form-control" placeholder="Buscar archivo...">
-				<input type="submit" value="Buscar">
-			</form>
-		</div>
 		<h1><a href="/">NERV</a></h1>
-		<h2><span>Solo personal autorizado!!!!</span></h2>
 	</div>
 
 	<div id="menu-toggle">⋮</div>
@@ -183,6 +176,28 @@ function escribirLinea() {
 }
 
 window.onload = escribirLinea;
+
+						// ==========================
+						// MENU MOVIL
+						// ==========================
+						const toggleBtn = document.getElementById("menu-toggle");
+						const sidebar = document.getElementById("side-bar");
+						const overlay = document.getElementById("menu-overlay");
+
+						if (toggleBtn && sidebar && overlay) {
+
+    					toggleBtn.addEventListener("click", () => {
+        					sidebar.classList.add("active");
+        					overlay.classList.add("active");
+    					});
+
+    					overlay.addEventListener("click", () => {
+        				sidebar.classList.remove("active");
+        				overlay.classList.remove("active");
+    					});
+
+						}
+
 </script>
 
 </body>

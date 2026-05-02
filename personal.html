@@ -11,12 +11,6 @@
 <body>
     <div id="container-wrap">
         <div id="header">
-		        <div id="search-top-box">
-			        <form id="search-top-box-form" method="get" action="/search:page">
-				    <input type="text" name="q" id="search-top-box-input" class="form-control" placeholder="Buscar archivo...">
-				    <input type="submit" value="Buscar">
-			    </form>
-		    </div>
 		    <h1><a href="index.html">NERV</a></h1>
 		    <h2><span></span></h2>
 	    </div>
@@ -205,7 +199,28 @@
 							<br>
                         </div>
                     </div>
-                    <script type="module" src="main.js"></script>  
+                    <script>
+						// ==========================
+						// MENU MOVIL
+						// ==========================
+						const toggleBtn = document.getElementById("menu-toggle");
+						const sidebar = document.getElementById("side-bar");
+						const overlay = document.getElementById("menu-overlay");
+
+						if (toggleBtn && sidebar && overlay) {
+
+    					toggleBtn.addEventListener("click", () => {
+        					sidebar.classList.add("active");
+        					overlay.classList.add("active");
+    					});
+
+    					overlay.addEventListener("click", () => {
+        				sidebar.classList.remove("active");
+        				overlay.classList.remove("active");
+    					});
+
+						}
+					</script>  
                     <div id="footer">
 				        <div class="options">
 					        <a href="#">Políticas de Seguridad</a> | <a href="#">Contacto NERV</a> | <a href="#">Protocolo de Emergencia</a>
